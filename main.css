@@ -1,0 +1,99 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+}
+@font-face {
+	font-family: "distant-galaxy";
+	src:url(fonts/distant-galaxy/distant-galaxy.ttf);
+}
+
+.background {
+	background-color: rgb(13, 13, 15);
+	min-width: 100vw;
+	min-height: 100vh;
+	position: relative;
+	font-size: 0;
+	z-index: 1;
+	padding: 20px;
+}
+	.background-text {
+		position: absolute;
+		z-index: 2;
+		font-family: "distant-galaxy";
+		font-size: 260px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		text-shadow: rgb(250, 177, 0) 3px 3px 0,
+			rgb(250, 177, 0) -3px -3px 0, 
+			rgb(250, 177, 0) -3px 3px 0, 
+			rgb(250, 177, 0) 3px -3px 0,
+			rgb(3, 3, 3) -10px 10px 8px;
+		color:rgb(3, 3, 3);
+	}
+.heroes {
+	position: absolute;
+	min-width: 1450px;
+	min-height: 580px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 3;
+}
+	.hero {
+		z-index: 4;
+		display: inline-block;
+		position: relative;
+		background-color: rgba(3, 3, 3, 0.95);
+		height: 250px;
+		width: 250px;
+		margin: 20px;
+		color: rgb(250, 177, 0);
+		transition: transform 200ms ease-out;
+	}
+		.hero-name {
+			color: rgb(250, 177, 0);
+			font-size: 32px;
+			position: absolute;
+			font-family: "distant-galaxy";
+			width: 100%;
+			height: 100%;
+			color: rgb(250, 177, 0);
+			border-bottom: 3px solid rgb(250, 177, 0);
+			text-align: center;
+			opacity: 1;
+			transition: opacity 200ms ease-out, border-bottom 200ms ease-out;
+		}
+			.hero-name p {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform:translate(-50%,-50%);
+			}
+		.hero-data {
+			font-family: "distant-galaxy";
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			font-size: 24px;
+			color: rgb(250, 177, 0);
+			padding: 30px 10px;
+			text-overflow: hidden;
+			opacity: 0;
+			transition: opacity 200ms ease-out, box-shadow 200ms ease-out;
+		}
+		.hero:hover .hero-name {
+			opacity: 0;
+			border-bottom: none;
+		}
+		.hero:hover .hero-data {
+			opacity: 1;
+			box-shadow: rgb(250, 177, 0) -5px 5px 20px;
+		}
+		.hero:hover {
+			transform:scale(1.2,1.2);
+		}
+
