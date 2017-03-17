@@ -1,9 +1,10 @@
 const heroesWrap = document.getElementById('heroes');
+const url = 'http://swapi.co/api/people/?format=json';
 
-function request () {
+function request (url) {
   const xhr = new XMLHttpRequest();
-
-  xhr.open('GET', 'http://swapi.co/api/people/?format=json');
+  
+  xhr.open('GET', url);
   xhr.send();
 
   xhr.onreadystatechange = function () {
@@ -34,10 +35,13 @@ function render(response) {
   	let gender = data.results[i].gender;
 
   	const hero = new Hero (name, height, mass, hairColor, skinColor, eyeColor, birthYear, gender);
-  	
+
   	heroesWrap.appendChild(hero.render());
   }
- 
+
+  if (data.next !== null) {
+  	request (data.next);
+  } 
 }
 
 class Hero {
@@ -73,4 +77,4 @@ class Hero {
     return element;
   }
 }
-request ();
+request (url);
