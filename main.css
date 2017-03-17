@@ -30,12 +30,9 @@ body {
 	color:rgb(3, 3, 3);
 }
 .heroes {
-	position: absolute;
+	position: relative;
 	min-width: 1450px;
 	min-height: 580px;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
 	z-index: 3;
 }
 	.hero {
