@@ -4,36 +4,31 @@
 	box-sizing: border-box;
 	list-style: none;
 }
+body {
+	background-color: rgb(13, 13, 15);
+}
 @font-face {
 	font-family: "distant-galaxy";
 	src:url(fonts/distant-galaxy/distant-galaxy.ttf);
 }
 
-.background {
+.background-text {
 	background-color: rgb(13, 13, 15);
-	min-width: 100vw;
-	min-height: 100vh;
-	position: relative;
-	font-size: 0;
-	z-index: 1;
-	padding: 20px;
+	position: absolute;
+	z-index: 2;
+	font-family: "distant-galaxy";
+	font-size: 240px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	text-shadow: rgb(250, 177, 0) 3px 3px 0,
+		rgb(250, 177, 0) -3px -3px 0, 
+		rgb(250, 177, 0) -3px 3px 0, 
+		rgb(250, 177, 0) 3px -3px 0,
+		rgb(3, 3, 3) -10px 10px 8px;
+	color:rgb(3, 3, 3);
 }
-	.background-text {
-		position: absolute;
-		z-index: 2;
-		font-family: "distant-galaxy";
-		font-size: 260px;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		text-align: center;
-		text-shadow: rgb(250, 177, 0) 3px 3px 0,
-			rgb(250, 177, 0) -3px -3px 0, 
-			rgb(250, 177, 0) -3px 3px 0, 
-			rgb(250, 177, 0) 3px -3px 0,
-			rgb(3, 3, 3) -10px 10px 8px;
-		color:rgb(3, 3, 3);
-	}
 .heroes {
 	position: absolute;
 	min-width: 1450px;
@@ -52,7 +47,8 @@
 		width: 250px;
 		margin: 20px;
 		color: rgb(250, 177, 0);
-		transition: transform 200ms ease-out;
+		transition: all 200ms ease-out;
+		cursor:pointer;
 	}
 		.hero-name {
 			color: rgb(250, 177, 0);
@@ -85,15 +81,15 @@
 			opacity: 0;
 			transition: opacity 200ms ease-out, box-shadow 200ms ease-out;
 		}
-		.hero:hover .hero-name {
-			opacity: 0;
-			border-bottom: none;
-		}
-		.hero:hover .hero-data {
-			opacity: 1;
-			box-shadow: rgb(250, 177, 0) -5px 5px 20px;
-		}
-		.hero:hover {
-			transform:scale(1.2,1.2);
-		}
+			.hero:hover .hero-name {
+				opacity: 0;
+				border-bottom: none;
+			}
+			.hero:hover .hero-data {
+				opacity: 1;
+				box-shadow: rgb(250, 177, 0) -5px 5px 20px;
+			}
+			.hero:hover {
+				transform:scale(1.2,1.2);
+			}
 
